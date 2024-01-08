@@ -69,7 +69,7 @@ export function connect(urls, options) {
                                 let reply = {};
                                 try {
                                     let message = JSON.parse(msg.content.toString());
-                                    reply.msg = await callback(message, msg);
+                                    reply = await callback(message, msg);
                                 } catch (err) {
                                     if (!options || !options.sendErrorStack) {
                                         delete err.stack;
